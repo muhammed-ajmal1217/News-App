@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:myapp/view/home.dart';
+import 'package:myapp/controller/splash_controller.dart';
 import 'package:myapp/provider/splash_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -40,12 +40,5 @@ class _SplashScreenState extends State<SplashScreen> {
         ),
       ),
     );
-  }
-  Future<void> gotoHome(BuildContext context) async {
-    await Future.delayed(const Duration(seconds: 0));
-    // ignore: use_build_context_synchronously
-    Navigator.of(context).push(MaterialPageRoute(
-      builder: (context) => HomePage(),
-    ));
   }
 }
