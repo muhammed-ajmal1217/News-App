@@ -4,9 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/model/article_model.dart';
 
 // ignore: must_be_immutable
-class ArticleDetails extends StatelessWidget {
+class TopArticleDetails extends StatelessWidget {
   Articles articles;
-  ArticleDetails({super.key, required this.articles});
+  TopArticleDetails({super.key, required this.articles});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +16,7 @@ class ArticleDetails extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 300,
+              height: 350,
               width: double.infinity,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
@@ -28,16 +28,34 @@ class ArticleDetails extends StatelessWidget {
               child: Padding(
                 padding:
                     const EdgeInsets.only(top: 50, left: 10, right: 10),
-                child: Animate(
-                  effects: [
-                    SlideEffect(
-                      begin: BlurEffect.defaultValue,
-                      duration: Duration(seconds: 1)),
-                    FadeEffect(),
-                  ],
-                  child: Text(articles.title!.toUpperCase(),
-                      style: GoogleFonts.prompt(
-                          color: Colors.white, fontSize: 30)),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Animate(
+                        effects: [
+                          SlideEffect(
+                            begin: BlurEffect.defaultValue,
+                            duration: Duration(seconds: 2)),
+                          FadeEffect(),
+                        ],
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Image.asset('assets/breakingnews.png',height: 50,),
+                        ),
+                      ),
+                      Animate(
+                        effects: [
+                          SlideEffect(
+                            begin: BlurEffect.defaultValue,
+                            duration: Duration(seconds: 1)),
+                          FadeEffect(),
+                        ],
+                        child: Text(articles.title!.toUpperCase(),
+                            style: GoogleFonts.prompt(
+                                color: Colors.white, fontSize: 30)),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -137,7 +155,7 @@ class ArticleDetails extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      Text(articles.author!,style: GoogleFonts.nanumMyeongjo(),),
+                      Text(articles.author!),
                     ],
                   ),
                 ),
