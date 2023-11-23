@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/provider/splash_provider.dart';
+import 'package:myapp/controller/splash_provider.dart';
 import 'package:myapp/view/splash.dart';
 import 'package:provider/provider.dart';
 

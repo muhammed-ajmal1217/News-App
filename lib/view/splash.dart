@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:myapp/controller/splash_controller.dart';
-import 'package:myapp/provider/splash_provider.dart';
+import 'package:myapp/controller/splash_provider.dart';
 import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {

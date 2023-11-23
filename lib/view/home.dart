@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/widget/customized_listtile.dart';
+import 'package:myapp/widget/news_customized_listtile.dart.dart';
 import 'package:myapp/model/article_model.dart';
 import 'package:myapp/services/api_service.dart';
+import 'package:myapp/widget/top_haedline_customized_listtile.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
   ApiService? client = ApiService();
-  ApiService1? client1 = ApiService1();
+
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class HomePage extends StatelessWidget {
             height: 170,
             width: double.infinity,
             child: FutureBuilder<List<Articles?>>(
-              future: client1!.getToheadLines(),
+              future: client!.getArticle(),
               builder: (BuildContext context, snapshot1) {
                 if (!snapshot1.hasData) {
                   return Center(
@@ -61,7 +62,7 @@ class HomePage extends StatelessWidget {
                             articles1[index]!.description != null &&
                             articles1[index]!.urlToImage != null &&
                             articles1[index]!.content != null) {
-                          return customListtile1(context, articles1[index]!);
+                          return topHeadlineLIsttile(context, articles1[index]!);
                         }
                         return Container();
                       },
@@ -110,7 +111,7 @@ class HomePage extends StatelessWidget {
                               articles[index]!.description != null &&
                               articles[index]!.urlToImage != null &&
                               articles[index]!.content != null) {
-                            return customListtile(context, articles[index]!);
+                            return newsListTile(context, articles[index]!);
                           }
                           return Container();
                         },
